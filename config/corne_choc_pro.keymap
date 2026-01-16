@@ -16,18 +16,18 @@
 
 / {
     macros {
-        macro_w: save {
+        vim_w: vim_w {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COLON &kp W &kp RET>;
-            label = "SAVE";
+            label = "VIM_W";
         };
 
-        macro_wq: macro_wq {
+        vim_q: vim_q {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp COLON &kp W &kp Q &kp RET>;
-            label = "MACRO_WQ";
+            bindings = <&kp COLON &kp Q &kp RET>;
+            label = "VIM_Q";
         };
     };
 
@@ -103,10 +103,10 @@
 
         nav {
             bindings = <
-&none      &none         &none         &none           &none             &none  &kp PRINTSCREEN  &kp INS  &none  &none           &none           &none         &none            &none
-&none      &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &none  &none            &none    &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none
-&macro_wq  &none         &none         &none           &none             &none                            &none  &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &macro_w
-                                       &none           &none             &none                            &none  &none           &none
+&none   &none         &none         &none           &none             &none  &kp PRINTSCREEN  &kp INS  &none  &none           &none           &none         &none            &none
+&none   &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &none  &none            &none    &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none
+&vim_q  &none         &none         &none           &none             &none                            &none  &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &vim_w
+                                    &none           &none             &none                            &none  &none           &none
             >;
         };
 
