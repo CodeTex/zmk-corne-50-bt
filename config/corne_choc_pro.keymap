@@ -66,7 +66,7 @@
 
         tg_game {
             bindings = <&caps_word>;
-            key-positions = <9 4>;
+            key-positions = <14 27>;
         };
     };
 
