@@ -33,15 +33,43 @@
         bt_0: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(0,100,50) &bt BT_SEL 0>;
+            bindings = <&rgb_ug RGB_ON &bt BT_SEL 0 &rgb_ug RGB_COLOR_HSB(112,100,50)>;
             label = "NEW_MACRO";
         };
 
         bt_1: bt_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_COLOR_HSB(180,100,50) &bt BT_SEL 1>;
+            bindings = <&rgb_ug RGB_ON &bt BT_SEL 1 &rgb_ug RGB_COLOR_HSB(193,100,50)>;
             label = "BT_1";
+        };
+
+        bt_2: bg_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &bt BT_SEL 2 &rgb_ug RGB_COLOR_HSB(50,100,50)>;
+            label = "BG_2";
+        };
+
+        bt_3: bg_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &bt BT_SEL 3 &rgb_ug RGB_COLOR_HSB(0,100,50)>;
+            label = "BG_3";
+        };
+
+        bt_4: bg_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &bt BT_SEL 4 &rgb_ug RGB_COLOR_HSB(275,100,50)>;
+            label = "BG_4";
+        };
+
+        bt_clr: bt_clr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_OFF &rgb_ug RGB_ON &bt BT_CLR &rgb_ug RGB_COLOR_HSB(275,0,100)>;
+            label = "BT_CLR";
         };
     };
 
@@ -135,10 +163,10 @@
 
         util {
             bindings = <
-&none           &bootloader   &none         &studio_unlock  &none         &sys_reset       &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &none  &mkp MB1        &mkp MB2        &mkp MB3      &none            &bt_0
-&bt BT_CLR_ALL  &kp C_PREV    &kp C_MUTE    &kp C_PP        &kp C_NEXT    &none            &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &bt_1
-&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4                                       &none  &mkp MB4        &msc SCRL_DOWN  &msc SCRL_UP  &mkp MB5         &to 3
-                                            &kp SCROLLLOCK  &none         &rgb_ug RGB_TOG                                    &none  &none           &none
+&none    &bootloader  &none       &studio_unlock  &none       &sys_reset       &rgb_ug RGB_EFF  &rgb_ug RGB_BRI  &none  &mkp MB1        &mkp MB2        &mkp MB3      &none            &none
+&none    &kp C_PREV   &kp C_MUTE  &kp C_PP        &kp C_NEXT  &none            &rgb_ug RGB_EFR  &rgb_ug RGB_BRD  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+&bt_clr  &bt_0        &bt_1       &bt_2           &bt_3       &bt_4                                              &none  &mkp MB4        &msc SCRL_DOWN  &msc SCRL_UP  &mkp MB5         &to 3
+                                  &kp SCROLLLOCK  &none       &rgb_ug RGB_TOG                                    &none  &none           &none
             >;
         };
 
